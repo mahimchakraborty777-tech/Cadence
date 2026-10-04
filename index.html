@@ -1,1 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b13" />
+  <title>GONE — Know where it went.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="GONE home"><span class="brand-mark">G</span><span>GONE</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#home">Overview</a><a href="#expenses">Expenses</a><a href="#insights">Insights</a>
+    </nav>
+    <div class="profile-menu"><button class="avatar" aria-label="Open profile">AK</button></div>
+  </header>
 
+  <main id="home" class="app-shell">
+    <section class="intro"><div><p class="eyebrow">SATURDAY, OCTOBER 5, 2026</p><h1>Evening reckoning<br /><em>time.</em></h1></div><button class="icon-button" id="themeToggle" aria-label="Toggle theme">◐</button></section>
+
+    <section class="hero-grid">
+      <article class="balance-card card-glow">
+        <div class="card-heading"><span>Money left this month</span><span class="status-dot"><i></i> On track</span></div>
+        <div class="balance-row"><div><strong id="balance">12,450</strong><span class="currency">₹</span><p>of ₹25,000 monthly budget</p></div><div class="ring" style="--progress: 50%"><div><strong>50%</strong><span>used</span></div></div></div>
+        <div class="meter"><span style="width:50%"></span></div><div class="meter-label"><span>₹12,550 spent</span><span>15 days left</span></div>
+      </article>
+      <article class="quote-card"><span class="quote-mark">“</span><p>You don't need<br />more money.<br /><strong>You need a<br />better map.</strong></p><span class="quote-author">— your wallet</span></article>
+    </section>
+
+    <section class="stats-grid" aria-label="Spending summary">
+      <article class="stat-card stat-blue"><span class="stat-icon">↗</span><p>Spent today</p><strong>₹840</strong><small>12% less than yesterday</small></article>
+      <article class="stat-card stat-pink"><span class="stat-icon">◒</span><p>Spent this week</p><strong>₹4,280</strong><small>₹720 under your usual</small></article>
+      <article class="stat-card stat-purple"><span class="stat-icon">↯</span><p>Biggest expense</p><strong>₹2,100</strong><small>Shopping · this month</small></article>
+    </section>
+
+    <section class="section-block reminders"><div class="section-title"><div><p class="eyebrow">THE LAZY MAGIC</p><h2>Today's reminders <span>03</span></h2></div><button class="text-button" id="skipAll">Skip all today →</button></div><div class="reminder-list">
+      <button class="reminder" data-label="Chai"><span class="reminder-emoji">☕</span><span><strong>Chai</strong><small>₹20 · tap if you had it</small></span><span class="check">✓</span></button>
+      <button class="reminder" data-label="Metro"><span class="reminder-emoji">↝</span><span><strong>Metro</strong><small>₹50 · tap if you used it</small></span><span class="check">✓</span></button>
+      <button class="reminder" data-label="Recharge"><span class="reminder-emoji">▣</span><span><strong>Recharge</strong><small>₹99 · tap if done</small></span><span class="check">✓</span></button>
+    </div></section>
+
+    <section class="section-block" id="expenses"><div class="section-title"><div><p class="eyebrow">THE PAPER TRAIL</p><h2>Recent expenses</h2></div><a class="text-button" href="#expenses">See all →</a></div><div class="expense-list">
+      <div class="expense"><span class="expense-icon food">✦</span><span><strong>Pizza night</strong><small>Food · Today, 8:42 PM</small></span><b>−₹350</b></div>
+      <div class="expense"><span class="expense-icon travel">↗</span><span><strong>Uber to work</strong><small>Travel · Today, 9:10 AM</small></span><b>−₹280</b></div>
+      <div class="expense"><span class="expense-icon shop">□</span><span><strong>New headphones</strong><small>Shopping · Oct 3</small></span><b>−₹2,100</b></div>
+    </div></section>
+
+    <section class="section-block" id="insights"><div class="section-title"><div><p class="eyebrow">KEEP EXPLORING</p><h2>Make your money make sense</h2></div></div><div class="nav-grid"><a class="nav-card blue" href="#dashboard"><span>↗</span><strong>See where it went</strong><small>Spending dashboard</small></a><a class="nav-card green" href="#savings"><span>✧</span><strong>Build your buffer</strong><small>Track your savings</small></a><a class="nav-card orange" href="#split"><span>÷</span><strong>Split the damage</strong><small>Settle with friends</small></a></div></section>
+  </main>
+
+  <button class="fab" id="addExpense" aria-label="Add expense">+</button>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog id="expenseDialog"><form method="dialog" id="expenseForm"><button class="close" value="cancel" aria-label="Close">×</button><p class="eyebrow">NEW ENTRY</p><h2>Confess your spending.</h2><label>What did you buy?<input name="title" required placeholder="e.g. Late-night noodles" /></label><label>How much?<div class="amount-input"><span>₹</span><input name="amount" type="number" min="1" required placeholder="0" /></div></label><div class="category-picker"><span>Category</span><div><button type="button" class="category active">Food</button><button type="button" class="category">Travel</button><button type="button" class="category">Shopping</button></div></div><button class="primary-button">Log it →</button></form></dialog>
+  <script src="app.js"></script>
+</body></html>
